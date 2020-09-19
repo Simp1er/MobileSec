@@ -1,0 +1,3 @@
+[submodule "DumpApkInfo"]
+	path = DumpApkInfo
+	url = https://github.com/Simp1er/DumpApkInfo

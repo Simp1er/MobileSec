@@ -26,4 +26,7 @@
 
 
 
+## 2020-09-19 将自己之前改的的DumpApkInfo工具引入
+
+DumpApkInfo可以用来dump加壳信息、签名信息、APK包名等等功能，具体参见子模块[readme](https://github.com/Simp1er/DumpApkInfo/blob/master/README.md)
 
