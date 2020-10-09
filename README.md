@@ -30,3 +30,12 @@
 
 DumpApkInfo可以用来dump加壳信息、签名信息、APK包名等等功能，具体参见子模块[readme](https://github.com/Simp1er/DumpApkInfo/blob/master/README.md)
 
+
+
+## 2020-10-09 增加unicorn trace arm64的基本代码
+
+大概效果如下
+
+![image-20201009105052076](README.assets/image-20201009105052076.png)
+
+基于unicorn和capstone来trace函数执行流程并记录寄存器信息，具体自己看代码吧，只是一个demo
