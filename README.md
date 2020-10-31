@@ -39,3 +39,22 @@ DumpApkInfo可以用来dump加壳信息、签名信息、APK包名等等功能�
 ![image-20201009105052076](README.assets/image-20201009105052076.png)
 
 基于unicorn和capstone来trace函数执行流程并记录寄存器信息，具体自己看代码吧，只是一个demo
+
+## 2020-10-10 增加一个byte数组转hexString的dex
+
+手动封装了`okio.ByteString`的函数，并打包成dex，避免frida在hook APP时无法使用`ByteString`的转hex方法，frida使用方式
+
+首先将dex push进`/data/local/tmp/`目录下，然后`chmod`给予`dex`执行权限,frida调用时
+
+```js
+ Java.perform(function (){
+ 			 var okio = Java.openClassFile("/data/local/tmp/okio.dex")
+       okio.load()
+   			var ByteString  = Java.use("com.Simp1er.okio.ByteString")
+         ByteString.$new(key_bytes).hex()// 其实接下来就是ByteString的函数调用了
+ })
+
+```
+
+参考： [ByteString.java](https://android.googlesource.com/platform/external/okhttp/+/3c938a3/okio/src/main/java/okio/ByteString.java)
+
