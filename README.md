@@ -58,3 +58,9 @@ DumpApkInfo可以用来dump加壳信息、签名信息、APK包名等等功能�
 
 参考： [ByteString.java](https://android.googlesource.com/platform/external/okhttp/+/3c938a3/okio/src/main/java/okio/ByteString.java)
 
+## 2020-10-31 增加hook_init_array代码
+
+通过hook`linker`的`call_array`函数，hook得到`init_array`地址，在Android8.1 64位程序和32为程序上都测试成功，其他的请自己测试更改。
+
+
+
