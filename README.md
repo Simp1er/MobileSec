@@ -79,3 +79,9 @@ DumpApkInfo可以用来dump加壳信息、签名信息、APK包名等等功能�
 
 效果如下
 ![image-20210331.png](README.assets/image-20210331.png)
+
+## 2021-04-06 增加hook RegisterNative函数的脚本
+
+由于jni函数无论是动态注册或者静态注册的函数都会在加载过程中都会调用`RegisterNative`函数注册`JNI`函数最终函数地址，因此可以通过`hook` `RegisterNative`函数获取`JNI`函数最终地址以及函数实现所在模块，最终效果如下：
+
+![image-20210406.png](README.assets/image-20210406.png)
