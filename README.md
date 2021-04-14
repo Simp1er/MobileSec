@@ -85,3 +85,17 @@ DumpApkInfo可以用来dump加壳信息、签名信息、APK包名等等功能�
 由于jni函数无论是动态注册或者静态注册的函数都会在加载过程中都会调用`RegisterNative`函数注册`JNI`函数最终函数地址，因此可以通过`hook` `RegisterNative`函数获取`JNI`函数最终地址以及函数实现所在模块，最终效果如下：
 
 ![image-20210406.png](README.assets/image-20210406.png)
+
+
+## 2021-04-14 增加在native层遍历`HashMap`代码
+
+在`native`层遍历`HashMap`中`key`和`value`类型都为`String`的脚本
+
+传入一个`JNIEnv`和`HashMap`的对象即可
+最终效果如下
+```
+xxx => azU7Bc002xAAJ9QEYW1mGJrO8f0Ed9QH0FqzYdOlL8/Md/QHpENnwiLJhCBZB5mhQtIXdU8Pnw43BRB7hD6QY3VDdZfUF9QH1BfUB9
+bbbb => HHnB_FCRa80QdwWegx+jn98jVfguVXqGwR3kh9ROtBHavXaYZV+qLX+lUnG4LVQfyqsJ/zFo0JH2gRVVSi98GPkuj9GWADR18oS+VyJ2XhLUQYev/wQDCMFWSAYaGABE2SOBT
+cccc => JAE5zHBA7W55NB1VcTLaT8wI/An8Ae8A+wn5Gvsa7wj6CPQN/Qv6CPg=
+dddd => hwIABwRLPF9s5QJ40ATaaW1cNymwhLCe
+```
