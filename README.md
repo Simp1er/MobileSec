@@ -86,6 +86,8 @@ DumpApkInfo可以用来dump加壳信息、签名信息、APK包名等等功能�
 
 ![image-20210406.png](README.assets/image-20210406.png)
 
+注意：仅在`Android 8.1.0_r1`下测试成功，其他版本可能失效
+
 
 ## 2021-04-14 增加在native层遍历`HashMap`代码
 

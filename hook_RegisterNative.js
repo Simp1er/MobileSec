@@ -1,3 +1,7 @@
+/*
+仅在Android 8.1下测试成功，其他版本可能需要重新修改适配
+*/
+
 var ArtMethod_PrettyMethod
 function readStdString(str) {
     if ((str.readU8() & 1) === 1) { // size LSB (=1) indicates if it's a long string
