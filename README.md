@@ -1,4 +1,24 @@
-[TOC]
+<!--ts-->
+   * [AndroidSec](#androidsec)
+      * [1. Dalvik下DexClassLoader动态加载关键函数链(基于Android4.4)](#1-dalvik下dexclassloader动态加载关键函数链基于android44)
+      * [2. Art下DexClassLoader动态加载关键函数链(基于Android8.0)](#2-art下dexclassloader动态加载关键函数链基于android80)
+      * [3. Art下InMemoryDexClassLoader动态加载关键函数链(基于Android8.0)](#3-art下inmemorydexclassloader动态加载关键函数链基于android80)
+      * [4. Dalvik下RegisterNatives动态注册关键函数链(基于Android4.4)](#4-dalvik下registernatives动态注册关键函数链基于android44)
+      * [4. Art下RegisterNatives动态注册关键函数链(基于Android8.1)](#4-art下registernatives动态注册关键函数链基于android81)
+      * [2020-07-08 新增<a href="dex2apk.py">dex2apk.py</a>](#2020-07-08-新增dex2apkpy)
+      * [2020-09-19 将自己之前改的的DumpApkInfo工具引入](#2020-09-19-将自己之前改的的dumpapkinfo工具引入)
+      * [2020-10-09 增加<a href="unicorn_so.py">unicorn trace arm64的基本代码</a>](#2020-10-09-增加unicorn-trace-arm64的基本代码)
+      * [2020-10-10 增加一个<a href="okio.dex">byte数组转hexString的dex</a>](#2020-10-10-增加一个byte数组转hexstring的dex)
+      * [2020-10-31 增加<a href="hook_init_array.js">hook_init_array代码</a>](#2020-10-31-增加hook_init_array代码)
+      * [2020-11-02 增加<a href="hook_constructors.js">hook_constructors代码</a>](#2020-11-02-增加hook_constructors代码)
+      * [2021-03-31 增加<a href="hook_getContext.js">主动获取context方法</a>](#2021-03-31-增加主动获取context方法)
+      * [2021-04-06 增加<a href="hook_RegisterNative.js">hook RegisterNative函数的脚本</a>](#2021-04-06-增加hook-registernative函数的脚本)
+      * [2021-04-14 增加<a href="hook_Iterator.js">在native层遍历HashMap代码</a>](#2021-04-14-增加在native层遍历hashmap代码)
+      * [2021-04-17 get到一个新姿势：更改进程名](#2021-04-17-get到一个新姿势更改进程名)
+
+<!-- Added by: simp1er, at: 2021年 4月17日 星期六 21时49分14秒 CST -->
+
+<!--te-->
 
 # AndroidSec
 
