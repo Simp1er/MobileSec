@@ -104,7 +104,7 @@ cccc => JAE5zHBA7W55NB1VcTLaT8wI/An8Ae8A+wn5Gvsa7wj6CPQN/Qv6CPg=
 dddd => hwIABwRLPF9s5QJ40ATaaW1cNymwhLCe
 ```
 
-## 2021-04-17 get到一个新姿势
+## 2021-04-17 get到一个新姿势：更改进程名
 
 `android.os.Process`中的`setArgV0()`函数可用于改变`APP`的进程名。感谢卓桐大佬！！[Android修改进程名](https://bbs.pediy.com/thread-253676.htm)
 
