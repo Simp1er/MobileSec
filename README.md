@@ -15,8 +15,9 @@
       * [2021-04-06 增加<a href="hook_RegisterNative.js">hook RegisterNative函数的脚本</a>](#2021-04-06-增加hook-registernative函数的脚本)
       * [2021-04-14 增加<a href="hook_Iterator.js">在native层遍历HashMap代码</a>](#2021-04-14-增加在native层遍历hashmap代码)
       * [2021-04-17 get到一个新姿势：更改进程名](#2021-04-17-get到一个新姿势更改进程名)
+      * [2021-04-24 又找到一个anti-frida的方式](#2021-04-24-又找到一个anti-frida的方式)
 
-<!-- Added by: simp1er, at: 2021年 4月17日 星期六 21时49分14秒 CST -->
+<!-- Added by: simp1er, at: 2021年 4月24日 星期六 18时52分00秒 CST -->
 
 <!--te-->
 
@@ -149,3 +150,24 @@ try {
 这里测试`APP`的包名为`com.test.changeprocessname`但是当使用`ps -e`命令查看进程会发现找不到这个进程，最终效果如下
 
 ![](README.assets/image-20210417.png)
+
+## 2021-04-24 又找到一个anti-frida的方式
+
+frida在注入进程后如果脚本中使用`registerClass`这个`API`，在内存空间中会出现`frida`为前缀的`vdex/odex`，即使`frida`退出后，本次进程的内存空间仍旧还存在这样的痕迹。
+
+展示如下图
+
+![](README.assets/image-20210424-1.png)
+
+
+`anti-anti`的方式是在调用`registerClass`这个`API`之前执行以下语句
+
+```js
+Java.classFactory.tempFileNaming.prefix = "onetwothree"
+..
+Java.registerClass(...)
+```
+
+自定义后效果
+
+![](README.assets/image-20210424-2.png)
