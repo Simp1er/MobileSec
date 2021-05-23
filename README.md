@@ -171,3 +171,72 @@ Java.registerClass(...)
 自定义后效果
 
 ![](README.assets/image-20210424-2.png)
+
+## 2021-05-23 frida hook enum class 的方式
+
+[hookEnum.js](hookEnum.js)
+
+当`hook` `Enum`类时，`this`指针就是`Enum`类中具体成员的值。
+
+比如我这里写了一个枚举类，代码如下
+```java
+public enum enumClazz {
+    OAID("QAID"),TOKEN("TOKEN"), VIP("1");
+
+    private String value;
+     enumClazz(String value){
+        this.value = value;
+    }
+
+    public String getValue(){
+        return this.value;
+    }
+    public void setValue(String value){
+        this.value = value;
+        Log.e("enum", "className: " + this );
+    }
+}
+```
+
+在调用时使用方法像这样
+```java
+enumClazz.OAID.setValue("OAID_value");
+enumClazz.TOKEN.setValue("TOKEN_value");
+enumClazz.VIP.setValue("VIP_value");
+```
+此时调用`setValue(String)`函数打印出来的日志如下
+```bash
+2021-05-23 16:24:31.258 26207-26207/com.simp1er.enumdemo E/enum: className: OAID
+2021-05-23 16:24:31.262 26207-26207/com.simp1er.enumdemo E/enum: className: TOKEN
+2021-05-23 16:24:31.265 26207-26207/com.simp1er.enumdemo E/enum: className: VIP
+```
+
+可以发现其实对应的`this`指针就是对应调用的枚举成员。
+
+最终使用`frida`进行`hook`时，主要代码如下
+
+```js
+function hook(){
+    Java.perform(function(){
+        var enumClazz = Java.use('com.simp1er.enumdemo.enumClazz')
+    enumClazz.setValue.implementation = function(){
+        var value = arguments[0];
+        console.log('class =>',this,", value =>",value) // this即代表enum类的对象名称。
+      //  console.log('class =>',this.getString())
+        return this.setValue(value)
+    }
+    });
+}
+```
+效果如下
+```bash
+class => OAID , value => OAID_value
+class => TOKEN , value => TOKEN_value
+class => VIP , value => VIP_value
+```
+
+但是参考中的`this.getString()`方法并没有成功。
+
+
+
+参考：[https://bbs.pediy.com/thread-258772.htm#enum%E6%B5%8B%E8%AF%95](https://bbs.pediy.com/thread-258772.htm#enum%E6%B5%8B%E8%AF%95)
