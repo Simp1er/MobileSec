@@ -16,8 +16,9 @@
       * [2021-04-14 增加<a href="hook_Iterator.js">在native层遍历HashMap代码</a>](#2021-04-14-增加在native层遍历hashmap代码)
       * [2021-04-17 get到一个新姿势：更改进程名](#2021-04-17-get到一个新姿势更改进程名)
       * [2021-04-24 又找到一个anti-frida的方式](#2021-04-24-又找到一个anti-frida的方式)
+      * [2021-05-23 frida hook enum class 的方式](#2021-05-23-frida-hook-enum-class-的方式)
 
-<!-- Added by: simp1er, at: 2021年 4月24日 星期六 18时52分00秒 CST -->
+<!-- Added by: simp1er, at: 2021年 5月23日 星期日 18时31分43秒 CST -->
 
 <!--te-->
 
