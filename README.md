@@ -17,8 +17,9 @@
       * [2021-04-17 get到一个新姿势：更改进程名](#2021-04-17-get到一个新姿势更改进程名)
       * [2021-04-24 又找到一个anti-frida的方式](#2021-04-24-又找到一个anti-frida的方式)
       * [2021-05-23 frida hook enum class 的方式](#2021-05-23-frida-hook-enum-class-的方式)
+      * [2021-06-03 frida 无法hook上函数总结](#2021-06-03-frida-无法hook上函数总结)
 
-<!-- Added by: simp1er, at: 2021年 5月23日 星期日 18时31分43秒 CST -->
+<!-- Added by: simp1er, at: 2021年 6月 3日 星期四 16时02分10秒 CST -->
 
 <!--te-->
 
@@ -241,3 +242,17 @@ class => VIP , value => VIP_value
 
 
 参考：[https://bbs.pediy.com/thread-258772.htm#enum%E6%B5%8B%E8%AF%95](https://bbs.pediy.com/thread-258772.htm#enum%E6%B5%8B%E8%AF%95)
+
+## 2021-06-03 frida 无法hook上函数总结
+
+
+如果函数hook不到，
+- 首先，想想这个函数是不是真的执行到了；
+- 其次，想想函数所在类是不是接口类、是不是抽象类（检查方法可以通过Objection-WallBreaker搜索是否有对应实例或者直接看官方文档，如果是抽象类要找对应继承类中是否有对应函数的实现、如果是接口类找对应implements）
+-- 记一次hook不到有感
+
+[Hooking to Context doesn't work](https://github.com/frida/frida-java-bridge/issues/67)
+
+[Context类](https://developer.android.com/reference/android/content/Context)
+
+
