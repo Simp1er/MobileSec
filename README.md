@@ -249,6 +249,8 @@ class => VIP , value => VIP_value
 如果函数hook不到，
 - 首先，想想这个函数是不是真的执行到了；
 - 其次，想想函数所在类是不是接口类、是不是抽象类（检查方法可以通过Objection-WallBreaker搜索是否有对应实例或者直接看官方文档，如果是抽象类要找对应继承类中是否有对应函数的实现、如果是接口类找对应implements）
+- 再次，可以试试`Java.deoptimizeEverything()`函数
+
 -- 记一次hook不到有感
 
 [Hooking to Context doesn't work](https://github.com/frida/frida-java-bridge/issues/67)
