@@ -18,6 +18,7 @@
       * [2021-04-24 又找到一个anti-frida的方式](#2021-04-24-又找到一个anti-frida的方式)
       * [2021-05-23 frida hook enum class 的方式](#2021-05-23-frida-hook-enum-class-的方式)
       * [2021-06-03 frida 无法hook上函数总结](#2021-06-03-frida-无法hook上函数总结)
+      * [2021-07-28 将注册的类加入双亲委派链](#2021-07-28-将注册的类加入双亲委派链)
 
 <!-- Added by: simp1er, at: 2021年 6月 3日 星期四 16时02分10秒 CST -->
 
@@ -256,5 +257,13 @@ class => VIP , value => VIP_value
 [Hooking to Context doesn't work](https://github.com/frida/frida-java-bridge/issues/67)
 
 [Context类](https://developer.android.com/reference/android/content/Context)
+
+
+## 2021-07-28 将注册的类加入双亲委派链
+
+[hook代码](hook_classLoader.js)
+
+将通过`Java.registerClass() API`注册的类所在的`dexclassLoader`加入系统`classLoader`双亲委派链中，保证能够`Class.forName`函数调用注册的函数时能够成功。
+
 
 
