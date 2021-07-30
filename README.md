@@ -114,6 +114,8 @@ DumpApkInfo可以用来dump加壳信息、签名信息、APK包名等等功能�
 
 注意：仅在`Android 8.1.0_r1`下测试成功，其他版本可能失效
 
+20210730补充：更新由于可能存在匿名内存块的情况导致无法通过`ModuleMap`找到相应模块的情况处理
+
 
 ## 2021-04-14 增加[在native层遍历`HashMap`代码](hook_Iterator.js)
 

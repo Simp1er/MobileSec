@@ -16,11 +16,14 @@ function attach(addr) {
         }, 
         onLeave: function (retval) {
             var modulemap = new ModuleMap()
+            modulemap.update()
             var module = modulemap.find(retval)
+            var string = Memory.alloc(0x100)
+            ArtMethod_PrettyMethod(string, this.arg0, 1)
             if (module != null) {
-                var string = Memory.alloc(0x100)
-                ArtMethod_PrettyMethod(string, this.arg0, 1)
-                console.log('method_name =>', readStdString(string), ',offset=>', ptr(retval).sub(module.base), ',module_name=>', module.name)
+                console.log('<' + module.name + '> method_name =>', readStdString(string), ',offset=>', ptr(retval).sub(module.base), ',module_name=>', module.name)
+            }else{
+                console.log('<anonymous> method_name =>', readStdString(string), ', addr =>', ptr(retval))
             }
         }
     });
