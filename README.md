@@ -19,6 +19,7 @@
       * [2021-05-23 frida hook enum class 的方式](#2021-05-23-frida-hook-enum-class-的方式)
       * [2021-06-03 frida 无法hook上函数总结](#2021-06-03-frida-无法hook上函数总结)
       * [2021-07-28 将注册的类加入双亲委派链](#2021-07-28-将注册的类加入双亲委派链)
+      * [2021-11-10 增加两个打印java调用栈的frida脚本](#2021-11-10-增加两个打印java调用栈的frida脚本)
 
 <!-- Added by: simp1er, at: 2021年 6月 3日 星期四 16时02分10秒 CST -->
 
@@ -266,6 +267,13 @@ class => VIP , value => VIP_value
 [hook代码](hook_classLoader.js)
 
 将通过`Java.registerClass() API`注册的类所在的`dexclassLoader`加入系统`classLoader`双亲委派链中，保证能够`Class.forName`函数调用注册的函数时能够成功。
+
+
+## 2021-11-10 增加两个打印java调用栈的frida脚本
+
+[hook代码](frida_dump_backtrace.js)
+
+参考今天早上看到的一个`repo`中`Xposed`打印调用栈的方式，写出对应的`frida`脚本。
 
 
 
