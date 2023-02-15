@@ -1,5 +1,6 @@
 <!--ts-->
    * [AndroidSec](#androidsec)
+      * [0.以后知识分享都在知识星球了](#0-以后知识分享都在知识星球了,有兴趣的可以加下)
       * [1. Dalvik下DexClassLoader动态加载关键函数链(基于Android4.4)](#1-dalvik下dexclassloader动态加载关键函数链基于android44)
       * [2. Art下DexClassLoader动态加载关键函数链(基于Android8.0)](#2-art下dexclassloader动态加载关键函数链基于android80)
       * [3. Art下InMemoryDexClassLoader动态加载关键函数链(基于Android8.0)](#3-art下inmemorydexclassloader动态加载关键函数链基于android80)
@@ -20,12 +21,17 @@
       * [2021-06-03 frida 无法hook上函数总结](#2021-06-03-frida-无法hook上函数总结)
       * [2021-07-28 将注册的类加入双亲委派链](#2021-07-28-将注册的类加入双亲委派链)
       * [2021-11-10 增加两个打印java调用栈的frida脚本](#2021-11-10-增加两个打印java调用栈的frida脚本)
+      
 
 <!-- Added by: simp1er, at: 2021年 6月 3日 星期四 16时02分10秒 CST -->
 
 <!--te-->
 
 # AndroidSec
+
+## 0-以后知识分享都在知识星球了,有兴趣的可以加下
+
+![](imgs/zsxq.png)
 
 ## 1. Dalvik下DexClassLoader动态加载关键函数链(基于Android4.4)
 ![](./DexClassLoader/Dalvik_DexClassLoader.png)
