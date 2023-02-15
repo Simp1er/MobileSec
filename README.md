@@ -283,3 +283,9 @@ class => VIP , value => VIP_value
 
 
 
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/Simp1er/AndroidSec.svg)](https://starchart.cc/Simp1er/AndroidSec)
+
+
+
