@@ -1,6 +1,6 @@
 <!--ts-->
    * [AndroidSec](#androidsec)
-      * [0.以后知识分享都在知识星球了](#0-以后知识分享都在知识星球了,有兴趣的可以加下)
+      * [0. 以后知识分享都在知识星球了](#0-以后知识分享都在知识星球了有兴趣的可以加下)
       * [1. Dalvik下DexClassLoader动态加载关键函数链(基于Android4.4)](#1-dalvik下dexclassloader动态加载关键函数链基于android44)
       * [2. Art下DexClassLoader动态加载关键函数链(基于Android8.0)](#2-art下dexclassloader动态加载关键函数链基于android80)
       * [3. Art下InMemoryDexClassLoader动态加载关键函数链(基于Android8.0)](#3-art下inmemorydexclassloader动态加载关键函数链基于android80)
@@ -29,7 +29,7 @@
 
 # AndroidSec
 
-## 0-以后知识分享都在知识星球了,有兴趣的可以加下
+## 0. 以后知识分享都在知识星球了,有兴趣的可以加下
 
 ![](imgs/zsxq.png)
 
