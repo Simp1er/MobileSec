@@ -21,6 +21,7 @@
       * [2021-06-03 frida 无法hook上函数总结](#2021-06-03-frida-无法hook上函数总结)
       * [2021-07-28 将注册的类加入双亲委派链](#2021-07-28-将注册的类加入双亲委派链)
       * [2021-11-10 增加两个打印java调用栈的frida脚本](#2021-11-10-增加两个打印java调用栈的frida脚本)
+      * [2023-09-11 增加frida hook mod_init_function的代码](#2023-09-11-增加frida-hook-mod_init_function的代码)
       
 
 <!-- Added by: simp1er, at: 2021年 6月 3日 星期四 16时02分10秒 CST -->
@@ -281,6 +282,10 @@ class => VIP , value => VIP_value
 
 参考今天早上看到的一个[repo](https://github.com/ChenJunsen/Hegui3.0#%E6%89%93%E5%8D%B0%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E6%A0%88)中`Xposed`打印调用栈的方式，写出对应的`frida`脚本。
 
+
+## 2023-09-11 增加frida hook mod_init_function的代码
+
+[hook代码](hook_mod_init_function.js)
 
 
 ## Stargazers over time
